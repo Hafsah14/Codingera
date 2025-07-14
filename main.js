@@ -7,7 +7,22 @@ const board = [
   [' ', ' ', ' ']
 ];
 
-// Print the board
-board.forEach(row => {
-  console.log(row.join('|'));
-});
+function printBoard() {
+  board.forEach(row => {
+    console.log(row.join('|'));
+  });
+}
+
+function makeMove(player, row, col) {
+  if (board[row][col] === ' ') {
+    board[row][col] = player;
+    return true;
+  } else {
+    console.log("That spot is already taken!");
+    return false;
+  }
+}
+
+// Example move
+makeMove('X', 0, 0);
+printBoard();
